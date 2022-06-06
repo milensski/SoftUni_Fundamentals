@@ -2,8 +2,6 @@ cards = input()
 
 list_players = cards.split(" ")
 
-# print(list_players)
-
 team_a_count = 11
 team_b_count = 11
 
@@ -25,10 +23,6 @@ for element in list_players:
         team_b_count -= 1
         if team_b_count < 7:
             break
-
-
-# print(team_a)
-# print(team_b)
 
 print(f"Team A - {team_a_count}; Team B - {team_b_count}")
 if team_a_count < 7 or team_b_count < 7:
