@@ -1,7 +1,6 @@
 gifts = input().split()
-modified_gifts = gifts.copy()
-command = input()
 
+command = input()
 
 while command != "No Money":
     command = command.split()
@@ -10,16 +9,29 @@ while command != "No Money":
             word = command[1]
             for i in range(len(gifts)):
                 if gifts[i] == word:
-                    gifts.remove(word)
+                    gifts[i] = "None"
 
     elif "Required" in command:
-        if int(command[2]) <= len(gifts):
+        if int(command[2]) >= 0 and int(command[2]) < len(gifts):
             replacement = command[1]
             gifts[int(command[2])] = replacement
 
     elif "JustInCase" in command:
-        gifts.pop()
-        gifts.append(command[1])
-    command = input()
-print(gifts)
+        index = 1
+        if gifts[-1] == "None":
+            while gifts[-index] == "None":
+                index += 1
+            gifts.pop(-index)
+            gifts[-index] = command[1]
+        else:
+            gifts.pop(-index)
+            gifts.append(command[1])
 
+    command = input()
+
+while "None" in gifts:
+    for element in gifts:
+        if element == "None":
+            gifts.pop(gifts.index(element))
+
+print(*gifts, sep=" ")
