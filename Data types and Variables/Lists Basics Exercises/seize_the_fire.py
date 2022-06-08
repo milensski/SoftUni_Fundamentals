@@ -1,4 +1,4 @@
-fires = input().split("#")  # | High = 89#Low = 28#Medium = 77#Low = 23
+fires = input().split("#")
 water = int(input())
 cells = []
 type_of_fire = []
@@ -15,12 +15,10 @@ for element in cells:
     type_of_fire.append(element[0])
     value_of_fire.append(element[1])
 
-for index in range(len(type_of_fire)):  # print(f"{type_of_fire[index]} = {value_of_fire[index]}")
+for index in range(len(type_of_fire)):
 
     current_type = type_of_fire[index]
     current_value = int(value_of_fire[index])
-
-    # WORKING WITH EACH CELL:
 
     if current_type == "High" and 81 <= current_value <= 125 and current_value <= water:
         valid_cells.append(int(current_value))
