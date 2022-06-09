@@ -6,4 +6,4 @@ for element in single_string:
         single_string.append(element)
         single_string.pop(element_index)
 
-print(single_string)
+print(list(map(int, single_string)))
