@@ -23,7 +23,7 @@ while command[0] != "End":
         else:
             sequence.insert(index, str(value))
     elif action == "Strike":
-        if index + value not in range(len(sequence)):
+        if index + value not in range(len(sequence)) and (index - value) not in range(len(sequence)):
             print("Strike missed!")
         else:
             before_radius = index - value
