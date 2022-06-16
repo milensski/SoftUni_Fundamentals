@@ -1,5 +1,5 @@
 sequence = input().split()
-
+#    0   1  2
 command = input().split()
 
 while command[0] != "End":
@@ -9,21 +9,21 @@ while command[0] != "End":
     value = int(command[2])
 
     if action == "Shoot":
-        if index in range(len(sequence)):
+        if 0 <= index < len(sequence):
             index_value = int(sequence[index])
             index_value -= value
             if index_value <= 0:
                 sequence.pop(index)
             else:
-                sequence[index] = str(index_value)
+                sequence[index] = f'{index_value}'
 
     elif action == "Add":
-        if index not in range(len(sequence)):
+        if 0 > index or index >= len(sequence):
             print("Invalid placement!")
         else:
             sequence.insert(index, str(value))
     elif action == "Strike":
-        if index + value not in range(len(sequence)) and (index - value) not in range(len(sequence)):
+        if (index - value) < 0 or (index + value) >= len(sequence):
             print("Strike missed!")
         else:
             before_radius = index - value
