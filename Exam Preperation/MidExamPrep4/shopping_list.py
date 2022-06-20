@@ -4,9 +4,9 @@ while True:
     command = input()
     if command == "Go Shopping!":
         break
-    command.split()
-    if command[0] == "Urgent":
-        if command[1] in sequence:
+    command = command.split()
+    if "Urgent" in command:
+        if command[1] not in sequence:
             sequence.insert(0, command[1])
         else:
             continue
@@ -18,8 +18,8 @@ while True:
     if command[0] == "Correct":
         if command[1] in sequence:
             sequence[sequence.index(command[1])] = command[2]
-    else:
-        continue
+        else:
+            continue
     if command[0] == "Rearrange":
         if command[1] in sequence:
             sequence.remove(command[1])
