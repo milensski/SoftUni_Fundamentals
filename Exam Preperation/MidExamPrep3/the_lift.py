@@ -5,19 +5,23 @@ wagons = list(map(int, wagons))
 
 lift = []
 
-for state in wagons:
-    if int(state) >= 4:
-        continue
+for i in range(len(wagons):
+    while wagons[i] < 4 and people > 0:
 
-    while state < 4:
-        if people == 0:
-            break
-        state += 1
+        wagons += 1
         people -= 1
 
-    lift.append(state)
+        if people == 0:
+            break
+
+
 
 if people > 0:
-    print(f"There isn't enough space!{people} people in a queue!\n{' '.join(map(str, lift))}")
+    if sum(lift) == len(wagons) * 4:
+        print(f"There isn't enough space! {people} people in a queue!")
+        print(' '.join(map(str, lift)))
+elif people == 0 and sum(lift) != len(wagons) * 4:
+    print(f"The lift has empty spots!")
+    print(' '.join(map(str, lift)))
 else:
-    print(f"The lift has empty spots!\n{' '.join(map(str, lift))}")
+    print(' '.join(map(str, lift)))

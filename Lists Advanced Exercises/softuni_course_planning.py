@@ -32,32 +32,34 @@ def swap(lesson_1, lesson_2, lst):
         if lesson_1_exercise in lst:
             if second_index < len(lst):
                 lst.remove(lesson_1_exercise)
-                lst.insert(second_index+1,lesson_1_exercise)
+                lst.insert(second_index + 1, lesson_1_exercise)
             else:
                 lst.remove(lesson_1_exercise)
                 lst.append(lesson_1_exercise)
         if lesson_2_exercise in lst:
             if second_index < len(lst):
                 lst.remove(lesson_2_exercise)
-                lst.insert(first_index+1,lesson_2_exercise)
+                lst.insert(first_index + 1, lesson_2_exercise)
             else:
                 lst.remove(lesson_2_exercise)
                 lst.append(lesson_2_exercise)
 
     return lst
 
-def exercise(lesson_title,sequence):
+
+def exercise(lesson_title, sequence):
     lesson_exercise = f'{lesson_title}-Exercise'
     if lesson_title in sequence and lesson_exercise not in sequence:
         index = sequence.index(lesson_title)
         if index < len(sequence):
-            sequence.insert(index+1,lesson_exercise)
+            sequence.insert(index + 1, lesson_exercise)
         else:
             sequence.append(lesson_exercise)
     elif lesson_title not in sequence and lesson_exercise not in sequence:
         sequence.append(lesson_title)
         sequence.append(lesson_exercise)
     return sequence
+
 
 sequence = input().split(", ")
 
@@ -85,12 +87,12 @@ while True:
 
 
     elif command[0] == "Swap":
-        sequence = swap(command[1],command[2],sequence)
+        sequence = swap(command[1], command[2], sequence)
 
 
 
     elif command[0] == "Exercise":
-        sequence = exercise(command[1],sequence)
+        sequence = exercise(command[1], sequence)
 
-for i in range(1,len(sequence)+1):
-    print(f'{i}.{sequence[i-1]}')
+for i in range(1, len(sequence) + 1):
+    print(f'{i}.{sequence[i - 1]}')

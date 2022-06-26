@@ -1,12 +1,32 @@
-sequence = input().split()
+people = int(input())
+wagons = input().split()
 
-sequence = list(map(int, sequence))
+wagons = list(map(int, wagons))
 
-avg_sum = sum(sequence) / len(sequence)
+lift = []
 
-lst = list(filter(lambda x: x > avg_sum, (sorted(sequence, reverse=True))))[:5]
+for wagon in wagons:
 
-if len(lst) < 1:
-    print("No")
+    while wagon < 4:
+
+        wagon += 1
+        people -= 1
+
+        if people == 0:
+            break
+
+    lift.append(wagon)
+
+    if people == 0:
+        break
+
+if people > 0:
+    if sum(lift) == len(wagons) * 4:
+        print(f"There isn't enough space! {people} people in a queue!")
+        print(' '.join(map(str, lift)))
+elif people == 0 and sum(lift) != len(wagons) * 4:
+        print(f"The lift has empty spots!")
+        print(' '.join(map(str, lift)))
 else:
-    print(" ".join(list(map(str, lst))))
+    print(' '.join(map(str, lift)))
+
