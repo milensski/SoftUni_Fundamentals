@@ -13,8 +13,6 @@ class Email:
         print(f"{self.sender} says to {self.receiver}: {self.content}. Sent: {self.is_sent}")
 
 
-
-
 emails = []
 
 while True:
@@ -27,11 +25,11 @@ while True:
     receiver = command[1]
     content = command[2]
 
-    email = Email(sender,receiver,content)
+    email = Email(sender, receiver, content)
 
     emails.append(email)
 
-send_emails = list(map(lambda x: int(x),input().split(", ")))
+send_emails = list(map(lambda x: int(x), input().split(", ")))
 
 for digit in send_emails:
     emails[digit].send()
