@@ -29,10 +29,12 @@ while True:
 
     emails.append(email)
 
-send_emails = list(map(lambda x: int(x), input().split(", ")))
+# send_emails = list(map(lambda x: int(x), input().split(", ")))
 
-for digit in send_emails:
-    emails[digit].send()
+[emails[int(x)].send() for x in input().split(", ")]
+
+# for digit in send_emails:
+#     emails[digit].send()
 
 for email in emails:
     email.get_info()
