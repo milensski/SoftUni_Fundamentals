@@ -15,3 +15,4 @@ while 0<len(sequence):
         if num in sequence:
             sequence.remove(num)
     new_list.clear()
+
