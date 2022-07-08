@@ -7,4 +7,4 @@ d = defaultdict(int)
 for element in sequence:
     d[element] += 1
 
-[print(key) for key in d if d[key] % 2 != 0]
+[print(key, end=" ") for key in d if d[key] % 2 != 0]
