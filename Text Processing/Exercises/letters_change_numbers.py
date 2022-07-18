@@ -41,3 +41,4 @@ for word in text:
     total_sum += num_from_word
 
 print(f"{total_sum:.2f}")
+
