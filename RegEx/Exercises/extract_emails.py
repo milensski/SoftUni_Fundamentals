@@ -12,4 +12,3 @@ result = re.finditer(search_pattern,text)
 
 for match in result:
     print(match.group())
-
