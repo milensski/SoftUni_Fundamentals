@@ -3,14 +3,14 @@ import re
 text = input()
 
 
-pattern = r'(#|\|)([A-Za-z\ ]+)\1(\d{2}\/\d{2}\/\d{2})\1(\d*)\1'
+pattern = r'([?<=#|\|])([a-zA-Z ]+)\1(\d{2}\/\d{2}\/\d{2})\1(\d+)\1'
 
 result = re.finditer(pattern,text)
 
 calories = 0
 
 for match in result:
-    if match.group() is not None:
+    if match.group() is not None and match.group(2).strip() != "":
         calories += int(match.group(4))
 
 
