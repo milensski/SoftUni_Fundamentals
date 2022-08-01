@@ -10,15 +10,15 @@ for match in result:
     if match:
         calories += int(match.group(4))
 
+products = re.finditer(pattern, text)
 
-products = re.finditer(pattern,text)
-
-print(f'You have food to last you for: {calories//2000} days!')
+print(f'You have food to last you for: {calories // 2000} days!')
 
 for matches in products:
-     if matches:
-          food = matches.group(2)
-          date = matches.group(3)
-          calorie = matches.group(4)
+    if matches:
+        food = matches.group(2)
+        date = matches.group(3)
+        calorie = matches.group(4)
 
-          print(f"Item: {food}, Best before: {date}, Nutrition: {calorie}")
+        print(f"Item: {food}, Best before: {date}, Nutrition: {calorie}")
+
