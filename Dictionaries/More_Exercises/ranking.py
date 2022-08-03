@@ -44,12 +44,10 @@ students_courses = sorted(students_courses.items(), key=lambda x: x[0], reverse=
 for each in students_courses:
     score = 0
     for key, value in each[1].items():
-        score +=value
+        score += value
     if score > best_score:
-        best_score=score
-        best_player=[each,score]
-
-
+        best_score = score
+        best_player = [each, score]
 
 print(f"Best candidate is {best_player[0][0]} with total {best_player[1]} points.")
 print("Ranking:")
